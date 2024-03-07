@@ -20,7 +20,7 @@ class WindowCornersProviderDemo extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: const Text('WindowCorners'),
+            title: const Text("WindowCorners"),
           ),
           body: _WindowCornersProviderBody(),
         ),
@@ -35,7 +35,7 @@ class _WindowCornersProviderBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Center(
-        child: Text('WindowCorners\n${WindowCornersData.of(context)?.corners}'),
+        child: Text("WindowCorners\n${WindowCornersData.of(context)?.corners}"),
       ),
     );
   }
@@ -53,12 +53,12 @@ class WindowCornersApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('WindowCorners'),
+          title: const Text("WindowCorners"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
-            child: Text('WindowCorners\n${WindowCorners.getCorners()}'),
+            child: Text("WindowCorners\n${WindowCorners.getCorners()}"),
           ),
         ),
       ),
