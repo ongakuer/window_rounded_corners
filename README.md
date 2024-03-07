@@ -36,11 +36,7 @@ class App extends StatelessWidget {
         appBar: AppBar(
           title: const Text('WindowCorners'),
         ),
-        body: Padding(
-          child: Center(
-            child: Text("${WindowCorners.getCorners()}"),
-          ),
-        ),
+        body: Center(child: Text("${WindowCorners.getCorners()}")),
       ),
     );
   }
@@ -76,12 +72,7 @@ class App extends StatelessWidget {
 class WindowCornersProviderBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Center(
-        child: Text("${WindowCornersData.of(context)?.corners}"),
-      ),
-    );
+    return Center(child: Text("${WindowCornersData.of(context)?.corners}"));
   }
 }
 ```

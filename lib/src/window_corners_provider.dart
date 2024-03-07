@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'window_corners.dart';
 import 'window_rounded_corners_platform_interface.dart';
