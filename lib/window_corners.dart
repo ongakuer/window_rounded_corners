@@ -21,16 +21,16 @@ abstract class WindowCorners {
 
 @immutable
 class Corners {
-  final int topLeft;
-  final int topRight;
-  final int bottomRight;
-  final int bottomLeft;
+  final double topLeft;
+  final double topRight;
+  final double bottomRight;
+  final double bottomLeft;
 
   const Corners(this.topLeft, this.topRight, this.bottomRight, this.bottomLeft);
 
   static const Corners zero = Corners(0, 0, 0, 0);
 
-  static Corners fromMap(Map<String, int> map) =>
+  static Corners fromMap(Map<String, double> map) =>
       Corners(map["tl"] ?? 0, map["tr"] ?? 0, map["br"] ?? 0, map["bl"] ?? 0);
 
   @override

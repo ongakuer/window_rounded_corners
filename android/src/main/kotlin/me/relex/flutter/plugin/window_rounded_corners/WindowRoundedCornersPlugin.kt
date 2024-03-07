@@ -12,7 +12,7 @@ import io.flutter.plugin.common.MethodChannel
 
 class WindowRoundedCornersPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
     private lateinit var channel: MethodChannel
-    private var _corners: Map<String, Int>? = null
+    private var _corners: Map<String, Double>? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(
@@ -46,7 +46,10 @@ class WindowRoundedCornersPlugin : FlutterPlugin, MethodChannel.MethodCallHandle
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-        ViewCompat.setOnApplyWindowInsetsListener(binding.activity.window.decorView,
+        val density = binding.activity.resources.displayMetrics.density.toDouble()
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+            binding.activity.window.decorView,
             OnApplyWindowInsetsListener { _, insetsCompat ->
                 val insets = insetsCompat.toWindowInsets()
                 if (insets != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -60,16 +63,16 @@ class WindowRoundedCornersPlugin : FlutterPlugin, MethodChannel.MethodCallHandle
                         ?: 0
 
                     val corners = buildMap {
-                        this["tl"] = tlRadius
-                        this["tr"] = trRadius
-                        this["br"] = brRadius
-                        this["bl"] = blRadius
+                        this["tl"] = tlRadius / density
+                        this["tr"] = trRadius / density
+                        this["br"] = brRadius / density
+                        this["bl"] = blRadius / density
                     }
                     _corners = corners
                     channel.invokeMethod("updateWindowCorners", corners)
                     //Log.e(
                     //    "RoundedCornerPlugin",
-                    //    "OnApplyWindowInsetsListener tlRadius = $tlRadius , trRadius =$trRadius , brRadius = $brRadius , blRadius = $blRadius"
+                    //    "OnApplyWindowInsetsListener corners = $corners"
                     //)
                 }
                 return@OnApplyWindowInsetsListener insetsCompat

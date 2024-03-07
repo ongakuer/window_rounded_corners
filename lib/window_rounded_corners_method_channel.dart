@@ -20,7 +20,7 @@ class MethodChannelWindowRoundedCorners extends WindowRoundedCornersPlatform {
     switch (call.method) {
       case "updateWindowCorners":
         {
-          final map = call.arguments as Map<String, int>;
+          final map = call.arguments as Map<String, double>;
           _corners = Corners.fromMap(map);
           var state = WindowCornersProvider.globalKey.currentState;
           if (state != null) {
@@ -37,8 +37,8 @@ class MethodChannelWindowRoundedCorners extends WindowRoundedCornersPlatform {
   @override
   Future<Corners> queryCorners() async {
     try {
-      Map<String, int>? result =
-          await methodChannel.invokeMapMethod<String, int>("getWindowCorners");
+      Map<String, double>? result = await methodChannel
+          .invokeMapMethod<String, double>("getWindowCorners");
       if (result != null) {
         _corners = Corners.fromMap(result);
         // log.e(

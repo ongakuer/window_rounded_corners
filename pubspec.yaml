@@ -1,7 +1,7 @@
 name: window_rounded_corners
 description: "Get Device Window Rounded Corners"
 version: 0.0.1
-homepage:
+homepage: https://github.com/ongakuer/window_rounded_corners
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
