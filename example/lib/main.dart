@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:window_rounded_corners/window_corners.dart';
-import 'package:window_rounded_corners/window_corners_provider.dart';
+import 'package:window_rounded_corners/window_rounded_corners.dart';
 
 void main() {
   runApp(const WindowCornersProviderDemo());
