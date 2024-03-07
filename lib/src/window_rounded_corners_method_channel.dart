@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:window_rounded_corners/window_corners.dart';
-import 'package:window_rounded_corners/window_corners_provider.dart';
-import 'package:window_rounded_corners/window_rounded_corners_platform_interface.dart';
+
+import 'window_corners.dart';
+import 'window_corners_provider.dart';
+import 'window_rounded_corners_platform_interface.dart';
 
 class MethodChannelWindowRoundedCorners extends WindowRoundedCornersPlatform {
   @visibleForTesting

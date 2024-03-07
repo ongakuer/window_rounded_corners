@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:window_rounded_corners/window_rounded_corners_platform_interface.dart';
+
+import 'window_rounded_corners_platform_interface.dart';
 
 abstract class WindowCorners {
   static init() async {

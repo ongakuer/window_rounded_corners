@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:window_rounded_corners/window_corners.dart';
-import 'package:window_rounded_corners/window_rounded_corners_method_channel.dart';
+
+import 'window_corners.dart';
+import 'window_rounded_corners_method_channel.dart';
 
 abstract class WindowRoundedCornersPlatform extends PlatformInterface {
   WindowRoundedCornersPlatform() : super(token: _token);

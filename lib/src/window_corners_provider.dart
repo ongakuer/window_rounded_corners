@@ -2,8 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:window_rounded_corners/window_corners.dart';
-import 'package:window_rounded_corners/window_rounded_corners_platform_interface.dart';
+
+import 'window_corners.dart';
+import 'window_rounded_corners_platform_interface.dart';
 
 class WindowCornersProvider extends StatefulWidget {
   const WindowCornersProvider({super.key, required this.child});
