@@ -21,10 +21,10 @@ class WindowCornersProviderState extends State<WindowCornersProvider> {
 
   @override
   void initState() {
-    super.initState();
     if (Platform.isAndroid) {
       _prepare();
     }
+    super.initState();
   }
 
   void _prepare() async {
